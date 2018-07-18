@@ -74,6 +74,12 @@
                             <li>
                                 <a href="add-category.php">Add Bag Categories</a>
                             </li>
+                            <li>
+                                <a href="select-category.php">Add Products</a>
+                            </li>
+                            <li>
+                                <a href="upload-images.php">Add Images</a>
+                            </li>
                         </ul>
                     </li>
                     <li>

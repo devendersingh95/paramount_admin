@@ -40,7 +40,7 @@ include("db.php");
 							{
 						?>
 							<div class="alert alert-success">
-									<strong>Done! </strong> <?php echo $success; ?>
+									<strong></strong> <?php echo $success; ?>
 								</div>
 							<?php }?>
 
