@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2018 at 11:22 AM
+-- Generation Time: Jul 18, 2018 at 04:10 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -62,8 +62,42 @@ CREATE TABLE `bags` (
 --
 
 INSERT INTO `bags` (`id`, `name`, `image`, `about`, `status`) VALUES
-(1, 'Cotton Bags', 'images/cat-image-10790_2.jpg', 'Handmade', '1'),
 (3, 'Jute Bags', 'images/cat-image-jute_bag_food_1__1.jpg', 'Handmade Jute Bags', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `images`
+--
+
+CREATE TABLE `images` (
+  `id` int(11) NOT NULL,
+  `cat_id` int(11) NOT NULL,
+  `img_path` text NOT NULL,
+  `about` text NOT NULL,
+  `status` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product`
+--
+
+CREATE TABLE `product` (
+  `id` int(11) NOT NULL,
+  `cat_id` int(11) NOT NULL,
+  `title` text NOT NULL,
+  `about` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `cat_id`, `title`, `about`) VALUES
+(1, 3, 'Custom', 'Hello'),
+(2, 3, 'vxzd', 'gxfmnb');
 
 --
 -- Indexes for dumped tables
@@ -82,6 +116,18 @@ ALTER TABLE `bags`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -96,6 +142,18 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `bags`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `images`
+--
+ALTER TABLE `images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
