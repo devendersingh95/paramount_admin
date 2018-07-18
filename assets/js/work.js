@@ -5,6 +5,9 @@ $(document).ready(function () {
 	$("#add-category").submit(function(e){
 								e.preventDefault();
 	});
+	$("#select-product").submit(function(e){
+								e.preventDefault();
+	});
 		$("#upload-cat").on('click',function(){
 			$("#cat-details").empty();
 			 var c_name = $("#cat_name").val();
@@ -50,6 +53,21 @@ $(document).ready(function () {
 				});
 			 }
 		});
+
+//Upload Images
+		$("#cat_id").on('change',function(){
+			var data = "category="+$("#cat_id").val();
+			$.ajax({
+				url: "fetchprod.php",
+				type : 'post',
+				data : data,
+				success : function(data){
+					$("#prod_id").html(data);
+				}
+			});
+		});
+
+//login
 		$("#login_submit").on("click", function(){
 				$("#login_msg").empty();
 				var username = $("#username").val();
